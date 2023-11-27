@@ -6,6 +6,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./:/var/www
+      - laravel-logs:/var/www/storage/logs
     command: bash -c "chown -R www-data:www-data /var/www/storage && php-fpm"
 
   nginx:
@@ -30,3 +31,4 @@ services:
 
 volumes:
     mysql:
+    laravel-logs:
